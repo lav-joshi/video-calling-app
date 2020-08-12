@@ -6,7 +6,7 @@ myVideo.muted=true;
 var peer = new Peer(undefined ,{
     path:'/peerjs',
     host:'/',
-    port:'3030'
+    port:'9000'
 });
 
 let myVideoStream
@@ -26,7 +26,7 @@ navigator.mediaDevices.getUserMedia({
         call.on('stream',userVideoStream=>{
             console.log("2");
             addVideoStream(video,userVideoStream);
-        })
+        });
     },function(err){
         console.log('Fail' ,err);
     });
