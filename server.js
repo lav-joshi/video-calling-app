@@ -36,4 +36,4 @@ io.on('connection',(socket)=>{
     });
 })
 server.listen(process.env.PORT||3030);  
-peerServer.listen(peerPort);
+peerServer.listen(process.env.PORT||peerPort)
