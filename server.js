@@ -16,7 +16,7 @@ var peerExpress = require('express');
 var peerApp = peerExpress();
 var peerServer = require('http').Server(peerApp);
 var options = { debug: true }
-var peerPort = 9000;
+var peerPort = 443;
 
 peerApp.use('/peerjs', ExpressPeerServer(peerServer, options));
 
@@ -36,4 +36,4 @@ io.on('connection',(socket)=>{
     });
 })
 server.listen(process.env.PORT||3030);  
-peerServer.listen(process.env.PORT||peerPort);
+peerServer.listen(peerPort);
